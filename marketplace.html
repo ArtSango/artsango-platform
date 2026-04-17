@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Marketplace - ArtSango</title>
+  <style>
+    :root{ --bg:#f8f3ea; --card:#fff; --line:#e8dcc8; --brand:#0f766e; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:Verdana,sans-serif; background:var(--bg); color:#111827; }
+    .wrap{ max-width:1120px; margin:0 auto; padding:18px; padding-bottom:calc(18px + env(safe-area-inset-bottom)); }
+    .back-btn { border:0; background:#0f766e; color:#fff; border-radius:999px; padding:10px 14px; font-weight:800; cursor:pointer; }
+    .top{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .top a{ text-decoration:none; color:var(--brand); font-weight:800; }
+    .filters{ margin:16px 0; display:flex; gap:10px; flex-wrap:wrap; }
+    .filters input,.filters select{ padding:9px 10px; border-radius:10px; border:1px solid #cfbfa8; }
+    .grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .item{ background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+    .img{ height:150px; background:linear-gradient(125deg,#d7c4a0,#c8d8cc); }
+    .meta{ padding:12px; }
+    .meta h3{ margin:0 0 6px; font-size:1rem; }
+    .row{ display:flex; justify-content:space-between; align-items:center; font-size:.9rem; }
+    .btn{ margin-top:10px; width:100%; border:0; border-radius:9px; background:#0f766e; color:#fff; padding:9px; font-weight:700; cursor:pointer; }
+    @media (max-width:980px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:620px){ .grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="back-btn" type="button" onclick="goBack('index.html')">← Retour</button>
+        <a href="index.html">ArtSango</a>
+      </div>
+      <a href="panier.html" onclick="alert('Page panier a creer ensuite');return false;">Panier (0)</a>
+    </header>
+    <div class="filters">
+      <input placeholder="Rechercher une oeuvre...">
+      <select><option>Toutes categories</option><option>Mode</option><option>Deco</option><option>Art mural</option></select>
+      <select><option>Tous pays</option><option>Benin</option><option>Cote d'Ivoire</option><option>Senegal</option></select>
+    </div>
+    <section class="grid">
+      <article class="item"><div class="img"></div><div class="meta"><h3>Masque mural Dan</h3><div class="row"><span>Atelier Kora</span><strong>42 000 XOF</strong></div><button class="btn">Voir</button></div></article>
+      <article class="item"><div class="img"></div><div class="meta"><h3>Sac tisse Indigo</h3><div class="row"><span>Sankofa Craft</span><strong>26 500 XOF</strong></div><button class="btn">Voir</button></div></article>
+      <article class="item"><div class="img"></div><div class="meta"><h3>Tableau Savannah</h3><div class="row"><span>Studio Nia</span><strong>95 000 XOF</strong></div><button class="btn">Voir</button></div></article>
+      <article class="item"><div class="img"></div><div class="meta"><h3>Luminaire Bronze</h3><div class="row"><span>Maison Bena</span><strong>61 000 XOF</strong></div><button class="btn">Voir</button></div></article>
+    </section>
+  </div>
+  <script>
+    function goBack(fallback) {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = fallback;
+    }
+  </script>
+</body>
+</html>

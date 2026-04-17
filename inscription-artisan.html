@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Inscription Artisan - ArtSango</title>
+  <style>
+    :root { --bg:#f6f1e8; --card:#fff; --line:#e8ddca; --brand:#0f766e; --text:#1f2937; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Verdana, sans-serif; background:var(--bg); color:var(--text); }
+    .wrap { max-width:760px; margin:30px auto; padding:20px; padding-bottom:calc(20px + env(safe-area-inset-bottom)); }
+    .mobile-top { margin-bottom: 10px; }
+    .back-btn {
+      border: 0;
+      background: #0f766e;
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px; }
+    h1 { margin-top:0; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    label { display:block; font-size:.85rem; font-weight:700; margin-bottom:5px; }
+    input, select, textarea {
+      width:100%; padding:10px; border:1px solid #c9bca7; border-radius:10px; font:inherit;
+    }
+    textarea { min-height:92px; resize:vertical; }
+    .full { grid-column:1 / -1; }
+    button { margin-top:14px; width:100%; border:0; background:var(--brand); color:white; font-weight:800; padding:12px; border-radius:10px; cursor:pointer; }
+    a { color:#0f766e; font-weight:700; text-decoration:none; }
+    @media (max-width:700px){ .grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mobile-top">
+      <button class="back-btn" type="button" onclick="goBack('index.html')">← Retour</button>
+    </div>
+    <div class="card">
+      <h1>Creer mon compte artisan</h1>
+      <p>Renseigne les bases. ArtSango AI t'aidera ensuite a completer ton branding.</p>
+      <form class="grid">
+        <div><label>Nom de la marque</label><input type="text" placeholder="Ex: Atelier Kora"></div>
+        <div><label>Categorie</label><select><option>Mode</option><option>Decoration</option><option>Sculpture</option><option>Peinture</option></select></div>
+        <div><label>Pays</label><input type="text" placeholder="Benin"></div>
+        <div><label>Ville</label><input type="text" placeholder="Cotonou"></div>
+        <div class="full"><label>Telephone pro</label><input type="tel" placeholder="+229..."></div>
+        <div class="full"><label>Mini presentation</label><textarea placeholder="Qui es-tu, que crees-tu, pour qui?"></textarea></div>
+        <div><label>Email</label><input type="email" placeholder="contact@..."></div>
+        <div><label>Mot de passe</label><input type="password" placeholder="********"></div>
+        <div class="full"><button type="button" onclick="location.href='dashboard-artisan.html'">Activer ma boutique</button></div>
+      </form>
+      <p>Deja inscrit? <a href="connexion.html">Se connecter</a></p>
+    </div>
+  </div>
+  <script>
+    function goBack(fallback) {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = fallback;
+    }
+  </script>
+</body>
+</html>

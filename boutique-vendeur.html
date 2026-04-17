@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Boutique Createur - ArtSango</title>
+  <style>
+    body{ margin:0; font-family:Verdana,sans-serif; background:#f7f2e9; color:#111827; }
+    .cover{ background:linear-gradient(120deg,#0f766e,#155e75); color:#f0fdfa; padding:20px 16px 28px; }
+    .wrap{ max-width:1040px; margin:0 auto; }
+    .back-btn{ border:0; background:#ecfeff; color:#0f766e; border-radius:999px; padding:10px 14px; font-weight:800; cursor:pointer; }
+    .head{ display:flex; align-items:center; gap:16px; }
+    .avatar{ width:82px; height:82px; border-radius:50%; background:#99f6e4; }
+    .bio{ margin-top:10px; max-width:760px; line-height:1.6; }
+    .actions a{ display:inline-block; margin:10px 8px 0 0; text-decoration:none; color:#0f766e; font-weight:800; background:#ecfeff; padding:9px 12px; border-radius:9px; }
+    .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:18px 0 26px; }
+    .card{ background:#fff; border:1px solid #e7dbc8; border-radius:13px; overflow:hidden; }
+    .img{ height:150px; background:linear-gradient(125deg,#d0b898,#b8d0c5); }
+    .meta{ padding:11px; }
+    .meta h3{ margin:0 0 6px; }
+    .meta p{ margin:0; color:#4b5563; font-size:.9rem; }
+    @media (max-width:900px){ .grid{ grid-template-columns:1fr 1fr; } }
+    @media (max-width:600px){ .grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="cover">
+    <div class="wrap">
+      <button class="back-btn" type="button" onclick="goBack('marketplace.html')">← Retour</button>
+      <div class="head">
+        <div class="avatar"></div>
+        <div>
+          <h1 style="margin:0">Atelier Kora</h1>
+          <p style="margin:4px 0 0">Objets d'art et decoration - Cotonou, Benin</p>
+        </div>
+      </div>
+      <p class="bio">Nous transformons des materiaux locaux en pieces contemporaines. Chaque creation raconte une histoire et soutient l'artisanat local.</p>
+      <div class="actions">
+        <a href="#">Contacter</a><a href="#">Commander</a><a href="#">Partager</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="grid">
+      <article class="card"><div class="img"></div><div class="meta"><h3>Masque mural Dan</h3><p>42 000 XOF</p></div></article>
+      <article class="card"><div class="img"></div><div class="meta"><h3>Statue miniature</h3><p>31 000 XOF</p></div></article>
+      <article class="card"><div class="img"></div><div class="meta"><h3>Set deco murale</h3><p>58 000 XOF</p></div></article>
+    </section>
+  </main>
+  <script>
+    function goBack(fallback) {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = fallback;
+    }
+  </script>
+</body>
+</html>

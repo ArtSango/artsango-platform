@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Commandes - ArtSango</title>
+  <style>
+    body{ margin:0; font-family:Verdana,sans-serif; background:#f3ecdf; color:#111827; }
+    .wrap{ max-width:980px; margin:0 auto; padding:20px; padding-bottom:calc(20px + env(safe-area-inset-bottom)); }
+    .top{ display:flex; justify-content:space-between; align-items:center; }
+    .top a{ text-decoration:none; color:#0f766e; font-weight:800; }
+    table{ width:100%; border-collapse:collapse; background:#fff; border:1px solid #e1d4bf; border-radius:12px; overflow:hidden; margin-top:14px; min-width:650px; }
+    .table-wrap{ overflow-x:auto; border-radius:12px; }
+    .back-btn{ border:0; border-radius:999px; padding:10px 14px; font-weight:800; cursor:pointer; background:#0f766e; color:#fff; }
+    th,td{ padding:12px; text-align:left; border-bottom:1px solid #efe5d7; font-size:.93rem; }
+    th{ background:#faf6ef; text-transform:uppercase; font-size:.77rem; color:#6b7280; }
+    .tag{ display:inline-block; padding:5px 9px; border-radius:999px; font-weight:700; font-size:.77rem; }
+    .paid{ background:#dcfce7; color:#166534; }
+    .ship{ background:#fef9c3; color:#854d0e; }
+    .done{ background:#dbeafe; color:#1e3a8a; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top" style="gap:10px; flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <button class="back-btn" type="button" onclick="goBack('dashboard-artisan.html')">← Retour</button>
+        <h1 style="margin:0;">Gestion des commandes</h1>
+      </div>
+      <a href="dashboard-artisan.html">Retour dashboard</a>
+    </header>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Commande</th><th>Client</th><th>Montant</th><th>Statut</th><th>Date</th></tr></thead>
+        <tbody>
+          <tr><td>#AS-1042</td><td>A. Konan</td><td>84 000 XOF</td><td><span class="tag paid">Paye</span></td><td>16/04/2026</td></tr>
+          <tr><td>#AS-1039</td><td>M. Sane</td><td>31 000 XOF</td><td><span class="tag ship">A expedier</span></td><td>15/04/2026</td></tr>
+          <tr><td>#AS-1034</td><td>Y. Diallo</td><td>58 000 XOF</td><td><span class="tag done">Livree</span></td><td>13/04/2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    function goBack(fallback) {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = fallback;
+    }
+  </script>
+</body>
+</html>

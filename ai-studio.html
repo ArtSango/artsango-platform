@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ArtSango AI Studio</title>
+  <style>
+    :root{ --bg:#ece4d6; --card:#fff; --line:#ddceb7; --brand:#0f766e; }
+    body{ margin:0; font-family:Verdana,sans-serif; background:var(--bg); color:#1f2937; }
+    .wrap{ max-width:1040px; margin:0 auto; padding:20px; padding-bottom:calc(20px + env(safe-area-inset-bottom)); }
+    .hero{ background:linear-gradient(130deg,#0f766e,#14532d); color:#ecfeff; border-radius:14px; padding:20px; }
+    .back-btn{ border:0; border-radius:999px; padding:10px 14px; font-weight:800; cursor:pointer; background:#ecfeff; color:#0f766e; margin-bottom:12px; }
+    .grid{ margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .card{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; }
+    textarea{ width:100%; min-height:120px; border:1px solid #cbb89a; border-radius:10px; padding:10px; font:inherit; }
+    button{ margin-top:8px; border:0; background:var(--brand); color:white; font-weight:800; padding:10px 12px; border-radius:9px; cursor:pointer; }
+    .out{ background:#f8fafc; border:1px dashed #d1d5db; border-radius:9px; padding:10px; margin-top:8px; line-height:1.55; }
+    @media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <button class="back-btn" type="button" onclick="goBack('dashboard-artisan.html')">← Retour</button>
+      <h1 style="margin:0">ArtSango AI Studio</h1>
+      <p>Copilote marketing pour createurs: bio, storytelling, contenu social, pricing.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Generateur de bio pro</h3>
+        <textarea id="bioInput" placeholder="Ex: Je suis artisan maroquinier, je travaille le cuir naturel...\n"></textarea>
+        <button onclick="genBio()">Generer</button>
+        <div class="out" id="bioOut">Resultat IA...</div>
+      </article>
+
+      <article class="card">
+        <h3>Assistant pricing</h3>
+        <textarea id="priceInput" placeholder="Cout matiere: 12000\nTemps: 4h\nClient cible: premium local"></textarea>
+        <button onclick="genPrice()">Suggere un prix</button>
+        <div class="out" id="priceOut">Resultat IA...</div>
+      </article>
+    </section>
+  </div>
+
+  <script>
+    function genBio() {
+      var src = document.getElementById('bioInput').value.trim();
+      var out = src ? "Bio proposee: " + src + " Notre marque allie heritage artisanal, design contemporain et finition soignee pour une clientele locale et internationale." : "Ajoute des informations pour generer une bio.";
+      document.getElementById('bioOut').textContent = out;
+    }
+    function genPrice() {
+      var src = document.getElementById('priceInput').value.trim();
+      var out = src ? "Fourchette suggeree: 38 000 - 49 000 XOF. Positionnement recommande: premium accessible avec argument de valeur sur la qualite et la narration produit." : "Ajoute cout, temps et cible pour obtenir une suggestion.";
+      document.getElementById('priceOut').textContent = out;
+    }
+    function goBack(fallback) {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = fallback;
+    }
+  </script>
+</body>
+</html>

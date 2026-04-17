@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dashboard Artisan - ArtSango</title>
+  <style>
+    :root{ --bg:#efe8db; --card:#fff; --line:#e2d4bf; --brand:#0f766e; --text:#111827; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:Verdana,sans-serif; background:var(--bg); color:var(--text); }
+    .wrap{ max-width:1140px; margin:0 auto; padding:18px; padding-bottom:calc(18px + env(safe-area-inset-bottom)); }
+    .back-btn{ border:0; background:#0f766e; color:#fff; border-radius:999px; padding:10px 14px; font-weight:800; cursor:pointer; }
+    .top{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .top a{ text-decoration:none; color:var(--brand); font-weight:800; }
+    .stats{ margin-top:16px; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; }
+    .label{ font-size:.8rem; color:#6b7280; text-transform:uppercase; font-weight:700; }
+    .value{ font-size:1.6rem; font-weight:900; margin-top:6px; }
+    .grid{ margin-top:14px; display:grid; grid-template-columns:2fr 1fr; gap:12px; }
+    ul{ margin:8px 0 0; padding-left:18px; line-height:1.6; }
+    .btn{ display:inline-block; margin-right:8px; margin-top:8px; text-decoration:none; font-weight:800; border-radius:9px; padding:9px 12px; }
+    .btn-main{ background:var(--brand); color:#fff; }
+    .btn-ghost{ border:2px solid #cdb89a; color:#7c2d12; }
+    @media (max-width:980px){ .stats{ grid-template-columns:repeat(2,1fr);} .grid{ grid-template-columns:1fr; } .top{ align-items:flex-start; flex-direction:column; } nav{ line-height:1.9; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div>
+        <button class="back-btn" type="button" onclick="goBack('index.html')">← Retour</button>
+        <h1 style="margin:10px 0 0">Dashboard - Atelier Kora</h1>
+      </div>
+      <nav>
+        <a href="marketplace.html">Marketplace</a> |
+        <a href="ai-studio.html">ArtSango AI</a> |
+        <a href="commandes.html">Commandes</a>
+      </nav>
+    </header>
+
+    <section class="stats">
+      <article class="card"><div class="label">Vues boutique</div><div class="value">1 284</div></article>
+      <article class="card"><div class="label">Commandes</div><div class="value">37</div></article>
+      <article class="card"><div class="label">Panier moyen</div><div class="value">54k XOF</div></article>
+      <article class="card"><div class="label">Conversion</div><div class="value">3.1%</div></article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Actions rapides</h2>
+        <a class="btn btn-main" href="produit-nouveau.html">Ajouter un produit</a>
+        <a class="btn btn-ghost" href="boutique-vendeur.html">Voir ma boutique</a>
+        <ul>
+          <li>4 produits en rupture de stock</li>
+          <li>2 commandes a expedier aujourd'hui</li>
+          <li>Profil marque complet a 72%</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Raccourcis IA</h2>
+        <ul>
+          <li>Generer bio marque</li>
+          <li>Creer 3 posts Instagram</li>
+          <li>Optimiser prix d'un produit</li>
+          <li>Ameliorer storytelling</li>
+        </ul>
+      </article>
+    </section>
+  </div>
+  <script>
+    function goBack(fallback) {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = fallback;
+    }
+  </script>
+</body>
+</html>

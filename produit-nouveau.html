@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Nouveau produit - ArtSango</title>
+  <style>
+    body{ margin:0; font-family:Verdana,sans-serif; background:#f5efe3; color:#111827; }
+    .wrap{ max-width:760px; margin:20px auto; padding:20px; padding-bottom:calc(20px + env(safe-area-inset-bottom)); }
+    .back-btn{ border:0; border-radius:999px; padding:10px 14px; font-weight:800; cursor:pointer; background:#0f766e; color:#fff; }
+    .card{ background:#fff; border:1px solid #e0d4c0; border-radius:14px; padding:22px; }
+    h1{ margin-top:0; }
+    .grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .full{ grid-column:1/-1; }
+    label{ display:block; font-size:.85rem; font-weight:700; margin-bottom:5px; }
+    input, textarea, select{ width:100%; border:1px solid #cdbb9e; border-radius:10px; padding:10px; font:inherit; }
+    textarea{ min-height:92px; }
+    button{ border:0; border-radius:9px; padding:11px 14px; font-weight:800; cursor:pointer; }
+    .main{ background:#0f766e; color:#fff; }
+    .alt{ background:#fff; border:2px solid #d7c2a4; color:#7c2d12; }
+    .row{ margin-top:12px; display:flex; gap:8px; }
+    @media (max-width:700px){ .grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <button class="back-btn" type="button" onclick="goBack('dashboard-artisan.html')">← Retour</button>
+    <div class="card">
+      <h1>Ajouter un produit</h1>
+      <form class="grid">
+        <div class="full"><label>Nom du produit</label><input type="text" placeholder="Ex: Masque mural Dan"></div>
+        <div><label>Categorie</label><select><option>Decoration</option><option>Mode</option><option>Art mural</option></select></div>
+        <div><label>Prix (XOF)</label><input type="number" placeholder="42000"></div>
+        <div><label>Stock</label><input type="number" placeholder="12"></div>
+        <div><label>Poids (kg)</label><input type="number" step="0.1" placeholder="1.5"></div>
+        <div class="full"><label>Description</label><textarea placeholder="Matiere, taille, inspiration, usage..."></textarea></div>
+        <div class="full"><label>Photo produit</label><input type="file"></div>
+      </form>
+      <div class="row">
+        <button class="main" onclick="alert('Produit enregistre (prototype).')">Publier</button>
+        <button class="alt" onclick="location.href='dashboard-artisan.html'">Retour dashboard</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function goBack(fallback) {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = fallback;
+    }
+  </script>
+</body>
+</html>
